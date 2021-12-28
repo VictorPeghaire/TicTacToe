@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/topContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="@dimen/mobile_margin"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/timerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/mobile_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large_font"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/xCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/mobile_margin"
+                android:textSize="@dimen/medium_font" />
+
+            <TextView
+                android:id="@+id/oCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_font" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/instructionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray"
+            android:gravity="center"
+            android:padding="@dimen/mobile_margin"
+            app:layout_constraintTop_toBottomOf="@id/topContainer">
+
+            <TextView
+                android:id="@+id/instructionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/it_s_player_s_turn"
+                android:textSize="@dimen/medium_font" />
+
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/instructionContainer" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_white_square"
+            app:layout_constraintBottom_toBottomOf="@id/gridView"
+            app:layout_constraintEnd_toEndOf="@id/gridView"
+            app:layout_constraintStart_toStartOf="@id/gridView"
+            app:layout_constraintTop_toTopOf="@id/gridView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/onboardingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/mobile_margin">
+
+        <TextView
+            android:id="@+id/onboardingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mobile_margin"
+            android:text="@string/welcome_to_the_tic_tac_toe_game"
+            android:textColor="@color/black"
+            android:textSize="@dimen/large_font"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/startGameButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_game" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
